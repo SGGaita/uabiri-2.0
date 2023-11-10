@@ -1,1 +1,6 @@
 export * from './HomeScreen'
+export * from './ProfileScreen'
+export * from './PaymentScreen'
+export * from './PastTripsScreen'
+export * from './SupportScreen'
+export * from './AboutScreen'
