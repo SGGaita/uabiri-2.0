@@ -24,6 +24,9 @@ export default function App() {
         drawerActiveBackgroundColor:'#cccfff'
       }}
       drawerContent={props=> <CustomDrawer {...props}/>}>
+         <Drawer.Screen name="Home" 
+         options={{headerShown:false, swipeEnabled:false, drawerItemStyle: { height: 0 }}}
+         component={HomeScreen}/>
         <Drawer.Screen name="Payment" 
         options={{
           drawerIcon:()=>( <Image
