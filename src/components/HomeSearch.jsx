@@ -1,8 +1,12 @@
 import { StyleSheet, Text, TextInput, View, Image, TouchableOpacity } from 'react-native'
-import React from 'react'
+import React, {useState} from 'react'
 import { COLORS, SIZES, icons } from '../constants'
 
 export const HomeSearch = () => {
+
+    const [fromText, setFromText] = useState('')
+    const [destinationText, setDestinationText] = useState('')
+
     return (
         <View>
             {/*Input search box*/}
@@ -43,11 +47,11 @@ const styles = StyleSheet.create({
     },
     inputText: {
         flex: 1,
-        padding: 2,
+        padding: 10,
         fontSize: 20,
         fontWeight: '500',
         color: '#000',
-        backgroundColor: '#b0b0b0'
+        backgroundColor: '#d1d0cd'
     },
     rowLocation: {
         margin: SIZES.padding,
