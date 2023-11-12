@@ -3,11 +3,13 @@ import React, { useEffect, useState } from 'react'
 import firestore from '@react-native-firebase/firestore';
 import { COLORS, images,icons, SIZES, } from '../constants';
 import { useNavigation } from '@react-navigation/native';
+import { useDispatch } from 'react-redux';
+import { setBusStops } from '../redux/routesSlice';
 
 export const RouteCard = () => {
     const [loading, setLoading] = useState(true); // Set loading to true on component mount
     const [route, setRoutes] = useState([]); // Initial empty array of routes
-    //const dispatch = useDispatch()
+    const dispatch = useDispatch()
     const navigation = useNavigation()
 
     useEffect(() => {
@@ -51,8 +53,8 @@ export const RouteCard = () => {
               routeName: item.name
             };
           });
-          console.log(formattedData)
-       // dispatch(setBusStops(formattedData))
+          console.log('formatted',formattedData)
+      dispatch(setBusStops(formattedData))
     navigation.navigate('Pickup')
     };
 

@@ -1,7 +1,7 @@
 import 'react-native-gesture-handler';
 import { Image } from 'react-native'
 import React, { useEffect } from 'react'
-import { AboutScreen, HomeScreen, PaymentScreen, PickupScreen, ProfileScreen, RouteScreen, SupportScreen } from './src/screens'
+import { AboutScreen, DropoffScreen, HomeScreen, PaymentScreen, PickupScreen, ProfileScreen, RouteScreen, SupportScreen } from './src/screens'
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -9,6 +9,8 @@ import SplashScreen from 'react-native-splash-screen';
 import PastTripsScreen from './src/screens/PastTripsScreen';
 import { CustomDrawer} from './src/components';
 import { COLORS, icons,FONTS } from './src/constants';
+import { Provider, useSelector } from 'react-redux';
+import { store } from './src/redux/store';
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -19,6 +21,7 @@ export default function App() {
   }, []);
 
   return (
+    <Provider store={store}>
     <NavigationContainer>
       <Drawer.Navigator 
       screenOptions={{
@@ -54,6 +57,15 @@ export default function App() {
                             headerShown: true,
                             headerTitleAlign: 'center',
                         }}
+                        />
+                        <Stack.Screen
+                            name='Dropoff'
+                            component={DropoffScreen}
+                            options={{
+                                headerShown: true,
+                                headerTitle:'Select Drop-off',
+                                headerTitleAlign: 'center',
+                            }}
                         />
                         
                     </Stack.Navigator>
@@ -104,6 +116,7 @@ export default function App() {
         />
       </Drawer.Navigator>
     </NavigationContainer>
+    </Provider>
 
   )
 }
