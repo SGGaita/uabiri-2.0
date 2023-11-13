@@ -74,7 +74,7 @@ export default function App() {
 
             {() => (
               <Stack.Navigator
-              initialRouteName='Home1'
+              initialRouteName='Pickride'
               >
                 <Stack.Screen
                   name='Home1'

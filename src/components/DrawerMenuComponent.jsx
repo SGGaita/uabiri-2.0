@@ -13,15 +13,15 @@ export  const DrawerMenuComponent = () => {
             height: 15,
             width: 15,
             borderRadius: 30,
-            elevation: 1,
+            elevation: 3,
             padding: SIZES.padding * 2.5,
             margin: 5,
             alignItems: 'center',
             justifyContent: 'center',
-            backgroundColor: COLORS.white}}
+            backgroundColor: COLORS.primary}}
       onPress={() => navigation.toggleDrawer()}
       >
-        <Image source={icons.menu} resizeMode='contain' style={{ width: 15, height: 15, tintColor: COLORS.primary }}/>
+        <Image source={icons.menu} resizeMode='contain' style={{ width: 15, height: 15, tintColor: COLORS.white }}/>
       </TouchableOpacity>
     </View>
   )
