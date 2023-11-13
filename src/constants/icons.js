@@ -1,12 +1,16 @@
 const share = require('../assets/icons/share.png')
-const exit = require('../assets/icons/exit.png')
+const exit = require('../assets/icons/leave.png')
 const home = require('../assets/icons/home.png')
-const history = require('../assets/icons/clock.png')
-const wallet = require('../assets/icons/wallet.png')
-const support = require('../assets/icons/doubts-button.png')
-const info = require('../assets/icons/info.png')
+const history = require('../assets/icons/history.png')
+const wallet = require('../assets/icons/digital-wallet.png')
+const cards = require('../assets/icons/card.png')
+const settings = require('../assets/icons/settings.png')
+const support = require('../assets/icons/info.png')
+const info = require('../assets/icons/info1.png')
 const menu = require('../assets/icons/menu.png')
 const location = require('../assets/icons/location.png')
+const ride = require('../assets/icons/get-ride.png')
+const person = require('../assets/icons/profile.png')
+const arrowLeft = require('../assets/icons/left-arrow.png')
 
-
-export default {share, exit, home, history, wallet,support, info,menu, location}
+export default {share, exit, home, history, wallet,support, info,menu, location,person, ride, arrowLeft}

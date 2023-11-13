@@ -7,40 +7,46 @@ export const CustomDrawer = (props) => {
   return (
     <View style={styles.container}>
       <DrawerContentScrollView {...props}>
-        <View style={{ paddingVertical: SIZES.padding*4, paddingHorizontal: 10, flexDirection: 'row', alignItems: 'center', justifyContent: 'left',  borderBottomColor: '#f4f4f4',
-        borderBottomWidth: 1, }}>
+        <View style={{ marginTop:-5,paddingVertical: SIZES.padding*5, paddingHorizontal: 20, flexDirection: 'row', alignItems: 'center', justifyContent: 'left',  borderBottomColor: '#fff',
+        borderBottomWidth: 0.5,backgroundColor:COLORS.primary }}>
           <Image source={images.avatar} resizeMode='contain' style={{ width: 70, height: 70 }} />
           <View style={{ flexDirection: 'column', marginLeft:10 }}>
-            <Text style={{...FONTS.h4, fontWeight:'700', marginBottom:1}}>Steve Gaita</Text>
+            <Text style={{...FONTS.h4, fontWeight:'700', marginBottom:1, color:COLORS.white}}>Steve Gaita</Text>
             <TouchableOpacity >
-            <Text style={{...FONTS.body3, color: COLORS.primary }}>View profile</Text>
+            <Text style={{...FONTS.body3, color: COLORS.inputBlue }}>View profile</Text>
             </TouchableOpacity>
 
           </View>
         </View>
-        <View style={{ paddingVertical: 25,}}>
+        <View style={{ paddingVertical: 25, backgroundColor:COLORS.white}}>
         <DrawerItemList {...props} />
         </View>
-        
-      </DrawerContentScrollView>
-
-      <View style={{ paddingVertical: 15, paddingHorizontal: 10, flexDirection: 'column', alignItems: 'left',  borderTopColor: '#f4f4f4',
-        borderTopWidth: 1, }}>
+        <View style={{ paddingVertical: 15, paddingHorizontal: 10, backgroundColor:COLORS.white,flexDirection: 'column', alignItems: 'left',  borderTopColor: COLORS.gray,
+        borderTopWidth: 0.5, }}>
          
           
          <TouchableOpacity
-          style={{backgroundColor:'white', margin:5, paddingVertical:2, flexDirection:'row', alignItems:'center', justifyContent:'left'}}
+          style={{margin:5, paddingVertical:5, flexDirection:'row', alignItems:'center', justifyContent:'left'}}
          >
-          <Image source={icons.share} resizeMode='contain' style={{width:20, height:20}}/>
-          <Text style={{...FONTS.body2, paddingLeft:SIZES.padding *2}}> Share</Text>
+          <Image source={icons.share} resizeMode='contain' style={{tintColor:COLORS.primary,width:25, height:25}}/>
+          <Text style={{...FONTS.h3, paddingLeft:SIZES.padding *2, color:COLORS.black}}> Share</Text>
           </TouchableOpacity>
           
           <TouchableOpacity
-          style={{backgroundColor:'white', margin:5, paddingVertical:2, flexDirection:'row', alignItems:'center', justifyContent:'left'}}
+          style={{ margin:5, paddingVertical:5, flexDirection:'row', alignItems:'center', justifyContent:'left'}}
          >
-          <Image source={icons.exit} resizeMode='contain' style={{width:20, height:20}}/>
-          <Text style={{...FONTS.body2, paddingLeft:SIZES.padding *2}}> Logout</Text>
+          <Image source={icons.exit} resizeMode='contain' style={{tintColor:COLORS.primary, width:25, height:25}}/>
+          <Text style={{...FONTS.body2, paddingLeft:SIZES.padding *2, color:COLORS.black,}}> Logout</Text>
           </TouchableOpacity>
+      </View>
+        
+      </DrawerContentScrollView>
+
+      <View style={{ paddingVertical: 15, backgroundColor:COLORS.white, flexDirection: 'row', alignSelf: 'center',  borderTopColor: COLORS.gray,
+        borderTopWidth: 0.5, }}>
+         
+          
+         <Text style={{color:COLORS.primary}}>App version - v1.0.0</Text>
       </View>
     </View>
 
@@ -51,7 +57,8 @@ export const CustomDrawer = (props) => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
+    backgroundColor:COLORS.white
   }
 
 })

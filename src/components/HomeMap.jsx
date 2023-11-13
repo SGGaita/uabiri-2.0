@@ -4,12 +4,12 @@ import { DrawerMenuComponent } from './DrawerMenuComponent'
 
 export const HomeMap = () => {
   return (
-    <View style={{height:300, 
+    <View style={{flex:3, 
     backgroundColor:'#a0abff', 
     //justifyContent:'center',
     //alignItems:'center'
     }}>
-      <DrawerMenuComponent />
+      {/*<DrawerMenuComponent />*/}
       <Text>HomeMap</Text>
     </View>
   )

@@ -22,7 +22,7 @@ export const DropoffScreen = () => {
   const handleDropOffSelection = (item) => {
     dispatch(setDropOff(item));
     // Perform navigation or any other actions here
-    navigation.navigate(routes.MAP_SCREEN)
+    navigation.navigate('Pickride')
   };
 
   return (

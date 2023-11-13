@@ -1,6 +1,6 @@
 import { StyleSheet, Text, TouchableOpacity, View, Image } from 'react-native'
 import React from 'react'
-import { icons } from '../constants'
+import { icons, SIZES,COLORS } from '../constants'
 import { useNavigation } from '@react-navigation/native';
 
 export  const DrawerMenuComponent = () => {
@@ -8,10 +8,20 @@ export  const DrawerMenuComponent = () => {
 
   return (
     <View style={{alignSelf:'flex-start', margin:10 }} >
-      <TouchableOpacity style={{padding:10,borderRadius:30,elevation:1, backgroundColor:'white'}}
+      <TouchableOpacity style={{
+        zIndex: 50,
+            height: 15,
+            width: 15,
+            borderRadius: 30,
+            elevation: 1,
+            padding: SIZES.padding * 2.5,
+            margin: 5,
+            alignItems: 'center',
+            justifyContent: 'center',
+            backgroundColor: COLORS.white}}
       onPress={() => navigation.toggleDrawer()}
       >
-        <Image source={icons.menu} resizeMode='contain' style={{width:18, height:18}}/>
+        <Image source={icons.menu} resizeMode='contain' style={{ width: 15, height: 15, tintColor: COLORS.primary }}/>
       </TouchableOpacity>
     </View>
   )
