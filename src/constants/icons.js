@@ -12,5 +12,7 @@ const location = require('../assets/icons/location.png')
 const ride = require('../assets/icons/get-ride.png')
 const person = require('../assets/icons/profile.png')
 const arrowLeft = require('../assets/icons/left-arrow.png')
+const arrowRight = require('../assets/icons/arrow-right.png')
+const rightArrow = require('../assets/icons/right-arrow.png')
 
-export default {share, exit, home, history, wallet,support, info,menu, location,person, ride, arrowLeft}
+export default {share, exit, home, history, wallet,support, info,menu, location,person, ride, arrowLeft, arrowRight, rightArrow}

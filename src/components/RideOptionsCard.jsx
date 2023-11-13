@@ -55,7 +55,7 @@ export const RiderOptionsCard = () => {
   }, [selected])
 
   return (
-    <SafeAreaView style={{ backgroundColor: COLORS.white, flexGrow: 1}}>
+    <SafeAreaView style={{ backgroundColor: COLORS.white}}>
       <View>
         <TouchableOpacity
           //onPress={() => navigation.navigate(routes.NAVIGATION_CARD)}
