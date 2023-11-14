@@ -1,7 +1,7 @@
 import 'react-native-gesture-handler';
 import { Image } from 'react-native'
 import React, { useEffect, useState } from 'react'
-import { AboutScreen, DropoffScreen, HomeScreen, PaymentScreen, PickupScreen, ProfileScreen, RouteScreen, SupportScreen } from './src/screens'
+import { AboutScreen, ConfirmPickupDropoff, DropoffScreen, HomeScreen, PaymentScreen, PickupScreen, ProfileScreen, RouteScreen, SupportScreen } from './src/screens'
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -74,7 +74,7 @@ export default function App() {
 
             {() => (
               <Stack.Navigator
-              initialRouteName='Pickride'
+              initialRouteName='Home1'
               >
                 <Stack.Screen
                   name='Home1'
@@ -109,6 +109,16 @@ export default function App() {
                     //headerTitle:'Select Drop-off',
                     headerTitleAlign: 'center',
                     title: "Select a drop off",
+                  }}
+                />
+                <Stack.Screen
+                  name='Confirm'
+                  component={ConfirmPickupDropoff}
+                  options={{
+                    headerShown: false,
+                    //headerTitle:'Select Drop-off',
+                    headerTitleAlign: 'center',
+                    title: "Confirm pickup/dropoff",
                   }}
                 />
                 <Stack.Screen
