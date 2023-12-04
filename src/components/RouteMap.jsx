@@ -33,7 +33,7 @@ export const RouteMap = () => {
     origin={origin}
     destination={destination}
     apikey={GOOGLE_MAPS_APIKEY}
-    strokeWidth={4}
+    strokeWidth={3}
     strokeColor={COLORS.primary}
   />
 
@@ -51,7 +51,7 @@ export const RouteMap = () => {
                       }}
                     
                 >
-                    <Image source={images.location} resizeMode='contain' style={{ width: 30, height: 30,  }} />
+                    <Image source={images.location} resizeMode='contain' style={{ width: 15, height:15,  }} />
                    
 
                 </Marker> 
@@ -67,7 +67,7 @@ export const RouteMap = () => {
                     
                     >
                         
-                    <Image source={images.destination} resizeMode='contain' style={{ width: 30, height: 30, }} />
+                    <Image source={images.destination} resizeMode='contain' style={{ width: 20, height: 20, }} />
 
                 </Marker>
 

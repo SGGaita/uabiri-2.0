@@ -24,7 +24,7 @@ export const ConfirmLocations = () => {
 
             <View style={{
                 paddingHorizontal: 40,
-                paddingVertical: 20,
+                paddingVertical: 10,
                 //justifyContent:'center',
                 // flexDirection:'column'
 
@@ -100,7 +100,11 @@ export const ConfirmLocations = () => {
                 </View>
             </View>
 
-            <View >
+            <View 
+             style={{
+                
+             }}
+            >
                 <TouchableOpacity
                     onPress={() => navigation.navigate('Pickride')}
 

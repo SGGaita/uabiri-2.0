@@ -6,11 +6,11 @@ import { RouteMap, ConfirmLocations } from '../components'
 export const ConfirmPickupDropoff = () => {
     return (
         <View style={{ display: 'flex', justifyContent: 'space-between' }}>
-            <View style={{ height: Dimensions.get('window').height - 300 }}>
+            <View style={{ height: Dimensions.get('window').height - 275 }}>
                 <RouteMap />
             </View>
 
-            <View style={{ height: 300 }}>
+            <View style={{ height: 275 }}>
                 <ConfirmLocations />
             </View>
 

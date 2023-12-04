@@ -14,5 +14,6 @@ const splatter = require('../assets/images/splatter.png')
 const booked = require('../assets/images/booked_seat.png')
 const available = require('../assets/images/available_seat.png')
 const selected = require('../assets/images/selected_seat.png')
+const matatu = require('../assets/images/matatu.png')
 
-export default {avatar,location,corner,logo, van, bus, minibus,booked,available,selected, stage, signup, otp, success,splatter, destination}
+export default {avatar,location,corner,logo, van, bus, minibus,matatu,booked,available,selected, stage, signup, otp, success,splatter, destination}

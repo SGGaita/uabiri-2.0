@@ -1,7 +1,7 @@
 import 'react-native-gesture-handler';
 import { Image } from 'react-native'
 import React, { useEffect, useState } from 'react'
-import { AboutScreen, ConfirmPickupDropoff, DropoffScreen, HomeScreen, PaymentScreen, PickupScreen, ProfileScreen, RouteScreen, SupportScreen } from './src/screens'
+import { AboutScreen, ConfirmPickupDropoff, DropoffScreen, HomeScreen, LoginScreen, OnboardingScreen, PaymentScreen, PickupScreen, ProfileScreen, RouteScreen, SupportScreen } from './src/screens'
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -18,37 +18,51 @@ const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
 
 export default function App() {
-  const [location, setLocation] = useState(null)
+  const [location, setLocation] = useState(null);
+  const [errorMessage, setErrorMessage] = useState(null);
 
   //Splash screen
   useEffect(() => {
     SplashScreen.hide();
   }, []);
 
-  //Location useeffect
   useEffect(() => {
-    //check if app has location permission
-    const hasLocationPermission = async () => {
-      if (Platform.OS === 'android') {
-        const granted = await PermissionsAndroid.check(PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION);
-        return granted
+    checkLocationStatus();
+  }, []);
+
+  const checkLocationStatus = async () => {
+    if (Platform.OS === 'android') {
+      await requestLocationPermissionAndroid();
+    } else {
+      // Implement iOS location permission request here
+    }
+  };
+
+  const requestLocationPermissionAndroid = async () => {
+    console.log('Test location')
+    try {
+      const granted = await PermissionsAndroid.request(
+        PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
+        {
+          title: 'Cool Photo App Camera Permission',
+          message:
+            'Cool Photo App needs access to your camera ' +
+            'so you can take awesome pictures.',
+          buttonNeutral: 'Ask Me Later',
+          buttonNegative: 'Cancel',
+          buttonPositive: 'OK',
+        },)
+
+      if (granted === PermissionsAndroid.RESULTS.GRANTED) {
+        console.log('You can use the camera');
       } else {
-        //Handle iOS
+        console.log('Camera permission denied');
       }
 
-      //request location permission
-      const requestLocationPermission = async () => {
-        if (Platform.OS === 'android') {
-          const granted = await PermissionsAndroid.request(PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION);
+    } catch (err) {
 
-
-          return granted;
-        } else {
-          // Handle iOS
-        }
-      };
     }
-  }, [])
+  }
 
   return (
     <Provider store={store}>
@@ -74,8 +88,22 @@ export default function App() {
 
             {() => (
               <Stack.Navigator
-              initialRouteName='Home1'
+                initialRouteName='Onboard'
               >
+                <Stack.Screen
+                  name='Onboard'
+                  component={OnboardingScreen}
+                  options={{
+                    headerShown:false
+                  }}
+                />
+                <Stack.Screen
+                name='Login'
+                component={LoginScreen}
+                options={{
+                  headerShown:false
+                }}
+                />
                 <Stack.Screen
                   name='Home1'
                   component={HomeScreen}
